@@ -32,10 +32,10 @@ class ImageList: NSObject {
 
 class Image: NSObject {
     
-    var id: String?
-    var downloads: String?
-    var likes: String?
-    var favorites: String?
+    var id: Int?
+    var downloads: Int?
+    var likes: Int?
+    var favorites: Int?
     var userImageURL: String?
     
     override init() {
@@ -45,10 +45,10 @@ class Image: NSObject {
     /// - Parameter json: json object received from server
     init(json: [String: Any]) {
 
-        id = json["id"] as? String
-        downloads = json["downloads"] as? String
-        likes = json["likes"] as? String
-        favorites = json["favorites"] as? String
+        id = json["id"] as? Int
+        downloads = json["downloads"] as? Int
+        likes = json["likes"] as? Int
+        favorites = json["favorites"] as? Int
         userImageURL = json["userImageURL"] as? String
     }
 }
