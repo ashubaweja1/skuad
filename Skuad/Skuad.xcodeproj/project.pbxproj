@@ -21,6 +21,8 @@
 		322FF8D024ED0E3200541197 /* SearchHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322FF8CF24ED0E3200541197 /* SearchHandler.swift */; };
 		322FF8D324ED0F5000541197 /* ImageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322FF8D224ED0F5000541197 /* ImageList.swift */; };
 		322FF8D624ED15E800541197 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322FF8D524ED15E800541197 /* Constants.swift */; };
+		322FF8D924ED560500541197 /* GalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322FF8D724ED560500541197 /* GalleryCell.swift */; };
+		322FF8DA24ED560500541197 /* GalleryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 322FF8D824ED560500541197 /* GalleryCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		322FF8CF24ED0E3200541197 /* SearchHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHandler.swift; sourceTree = "<group>"; };
 		322FF8D224ED0F5000541197 /* ImageList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageList.swift; sourceTree = "<group>"; };
 		322FF8D524ED15E800541197 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		322FF8D724ED560500541197 /* GalleryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCell.swift; sourceTree = "<group>"; };
+		322FF8D824ED560500541197 /* GalleryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +161,8 @@
 			children = (
 				322FF8C824ED090F00541197 /* ImageListCell.swift */,
 				322FF8C924ED090F00541197 /* ImageListCell.xib */,
+				322FF8D724ED560500541197 /* GalleryCell.swift */,
+				322FF8D824ED560500541197 /* GalleryCell.xib */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -290,6 +296,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				322FF8DA24ED560500541197 /* GalleryCell.xib in Resources */,
 				322FF89D24ED04B500541197 /* LaunchScreen.storyboard in Resources */,
 				322FF8CB24ED090F00541197 /* ImageListCell.xib in Resources */,
 				322FF89A24ED04B500541197 /* Assets.xcassets in Resources */,
@@ -321,6 +328,7 @@
 				322FF8C424ED074A00541197 /* SearchVC.swift in Sources */,
 				322FF8D324ED0F5000541197 /* ImageList.swift in Sources */,
 				322FF8CA24ED090F00541197 /* ImageListCell.swift in Sources */,
+				322FF8D924ED560500541197 /* GalleryCell.swift in Sources */,
 				322FF8CE24ED0CC700541197 /* NetworkManager.swift in Sources */,
 				322FF8C624ED07D700541197 /* GalleryVC.swift in Sources */,
 				322FF8D024ED0E3200541197 /* SearchHandler.swift in Sources */,

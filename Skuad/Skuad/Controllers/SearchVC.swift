@@ -80,6 +80,15 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
         }
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+        if let galleryVC = storyboard.instantiateViewController(withIdentifier: "GalleryVC") as? GalleryVC {
+            galleryVC.imageList = imageList?.images ?? []
+            galleryVC.selectedIndex = indexPath.row
+            self.navigationController?.pushViewController(galleryVC, animated: true)
+        }
+    }
 }
 
 // MARK: UIScrollView Delegates
