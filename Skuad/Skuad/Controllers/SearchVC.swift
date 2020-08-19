@@ -15,6 +15,7 @@ private let kImageListCell = "ImageListCell"
 class SearchVC: UIViewController {
 
     @IBOutlet weak var imagesTableView: UITableView!
+    var isPagingRequestAllowed = false
     
     // MARK: Variables
     var imageList:ImageList?
@@ -25,20 +26,26 @@ class SearchVC: UIViewController {
         let imageListCell = UINib(nibName: kImageListCell, bundle: nil)
         imagesTableView.register(imageListCell, forCellReuseIdentifier: kImageListCell)
         
-        fetchImagess()
+        fetchImages(page: 1)
     }
     
     // MARK: Private Methods
     
-     private func fetchImagess(){
+    private func fetchImages(page: Int){
          weak var weakSelf = self
 //         activityIndicator.startAnimating()
-        SearchHandler.fetchImages(searchedText: "yellow+flower", page: 1) { (imagesList, error) in
+        SearchHandler.fetchImages(searchedText: "yellow+flower", page: page) { (imagesList, error) in
             DispatchQueue.main.async {
             //               weakSelf?.activityIndicator.stopAnimating()
-                weakSelf?.imageList = imagesList
+                if weakSelf?.imageList == nil {
+                    weakSelf?.imageList = imagesList
+                }
+                else {
+                    weakSelf?.imageList?.images.append(contentsOf: imagesList?.images ?? [])
+                }
+
                 weakSelf?.imagesTableView.reloadData()
-                          
+                weakSelf?.isPagingRequestAllowed = !(weakSelf?.imageList?.images.count == imagesList?.totalImages)
             }
         }
      }
@@ -70,3 +77,22 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+// MARK: UIScrollView Delegates
+extension SearchVC: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if  imageList == nil {
+            return
+        }
+
+        let scrollViewHeight = scrollView.frame.size.height
+        let scrollContentSizeHeight = scrollView.contentSize.height
+        let scrollOffset = scrollView.contentOffset.y
+
+        if scrollOffset + scrollViewHeight + 500.0 > scrollContentSizeHeight && isPagingRequestAllowed {
+            isPagingRequestAllowed = false
+            let nextPage = (imageList!.images.count/20) + 1
+            fetchImages(page: nextPage)
+        }
+    }
+}
