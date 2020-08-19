@@ -17,6 +17,7 @@
 		322FF8C624ED07D700541197 /* GalleryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322FF8C524ED07D700541197 /* GalleryVC.swift */; };
 		322FF8CA24ED090F00541197 /* ImageListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322FF8C824ED090F00541197 /* ImageListCell.swift */; };
 		322FF8CB24ED090F00541197 /* ImageListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 322FF8C924ED090F00541197 /* ImageListCell.xib */; };
+		322FF8CE24ED0CC700541197 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322FF8CD24ED0CC700541197 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		322FF8C524ED07D700541197 /* GalleryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryVC.swift; sourceTree = "<group>"; };
 		322FF8C824ED090F00541197 /* ImageListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListCell.swift; sourceTree = "<group>"; };
 		322FF8C924ED090F00541197 /* ImageListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageListCell.xib; sourceTree = "<group>"; };
+		322FF8CD24ED0CC700541197 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			children = (
 				322FF8C024ED06F200541197 /* Controllers */,
 				322FF8C724ED08E200541197 /* CustomCells */,
+				322FF8CC24ED0CB300541197 /* Managers */,
 				322FF89024ED04B000541197 /* AppDelegate.swift */,
 				322FF89624ED04B000541197 /* Main.storyboard */,
 				322FF89924ED04B500541197 /* Assets.xcassets */,
@@ -148,6 +151,14 @@
 				322FF8C924ED090F00541197 /* ImageListCell.xib */,
 			);
 			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		322FF8CC24ED0CB300541197 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				322FF8CD24ED0CC700541197 /* NetworkManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,6 +295,7 @@
 			files = (
 				322FF8C424ED074A00541197 /* SearchVC.swift in Sources */,
 				322FF8CA24ED090F00541197 /* ImageListCell.swift in Sources */,
+				322FF8CE24ED0CC700541197 /* NetworkManager.swift in Sources */,
 				322FF8C624ED07D700541197 /* GalleryVC.swift in Sources */,
 				322FF89124ED04B000541197 /* AppDelegate.swift in Sources */,
 			);
