@@ -15,6 +15,8 @@ private let kImageListCell = "ImageListCell"
 class SearchVC: UIViewController {
 
     @IBOutlet weak var imagesTableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     var isPagingRequestAllowed = false
     
     // MARK: Variables
@@ -33,10 +35,13 @@ class SearchVC: UIViewController {
     
     private func fetchImages(page: Int){
          weak var weakSelf = self
-//         activityIndicator.startAnimating()
+        if imageList == nil {
+            activityIndicator.startAnimating()
+        }
+         
         SearchHandler.fetchImages(searchedText: "yellow+flower", page: page) { (imagesList, error) in
             DispatchQueue.main.async {
-            //               weakSelf?.activityIndicator.stopAnimating()
+                weakSelf?.activityIndicator.stopAnimating()
                 if weakSelf?.imageList == nil {
                     weakSelf?.imageList = imagesList
                 }
