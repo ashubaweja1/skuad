@@ -23,5 +23,20 @@
             </objects>
             <point key="canvasLocation" x="139" y="116"/>
         </scene>
+        <!--GalleryVC-->
+        <scene sceneID="7nD-wU-bLC">
+            <objects>
+                <viewController storyboardIdentifier="GalleryVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Uc5-Zv-8vC" customClass="GalleryVC" customModule="Skuad" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iRm-cb-YKZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="pbI-La-8lv"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EUX-oI-QS5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="845" y="116"/>
+        </scene>
     </scenes>
 </document>
