@@ -17,7 +17,6 @@ let kQuery = "q"
 let kImageType = "image_type"
 let kPhoto = "photo"
 let kPage = "page"
-
 let kTotalHits = "totalHits"
 let kHits = "hits"
 let kId = "id"
@@ -26,8 +25,13 @@ let kLikes = "likes"
 let kFavorites = "favorites"
 let kUserImageURL = "userImageURL"
 
+
+// MARK: Display Strings
 let kErrorTitle = "Oops!"
 let kNoImageFound = "No image found"
 let kErrorMsg = "Something went wrong"
-
 let kSearchImage = "search images"
+
+
+// MARK: Image Names
+let kPlaceHolderImage = "placeHolder"

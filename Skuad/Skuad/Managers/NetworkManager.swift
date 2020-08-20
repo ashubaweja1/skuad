@@ -9,12 +9,16 @@
 import Foundation
 import UIKit
 
+
+/// RequestType is a enum used to identify http method of request
 enum RequestType: String {
     case Post = "POST"
     case Get = "GET"
     case Put = "PUT"
 }
 
+
+/// NetworkManager class is used for Api calling
 class NetworkManager: NSObject {
     
     /// This method will send request to server
@@ -22,7 +26,6 @@ class NetworkManager: NSObject {
     /// - Parameter type: type of request
     /// - Parameter params: params that need to be send
     /// - Parameter completionHandler: json response or error received from server
-    
     class func sendRequest(requestUrl: String, type: RequestType, params: [String: Any]? = nil, completionHandler : ((_ json : Any?, _ error: Error?) -> Void)? = nil) {
         
         let url: URL = URL(string: requestUrl)!
@@ -70,6 +73,11 @@ class NetworkManager: NSObject {
 }
 
 extension UIImageView {
+    
+    /// This method will download image from server
+    /// - Parameters:
+    ///   - url: url of image
+    ///   - completionHandler: return url and image 
     func downloadImage(url: String, completionHandler: @escaping (String, UIImage?) -> Void) -> Void {
         
         guard let imageUrl = URL(string: url) else {

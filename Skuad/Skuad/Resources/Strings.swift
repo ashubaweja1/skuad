@@ -16,7 +16,7 @@ extension String {
         return trimmedString
     }
     
-    // This method will enncode string
+    // This method will encode string
     func encode() -> String {
         let encodedString = self.trim().addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
         return encodedString ?? ""
