@@ -24,6 +24,7 @@
 		322FF8D924ED560500541197 /* GalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322FF8D724ED560500541197 /* GalleryCell.swift */; };
 		322FF8DA24ED560500541197 /* GalleryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 322FF8D824ED560500541197 /* GalleryCell.xib */; };
 		322FF8DC24EE25B600541197 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322FF8DB24EE25B600541197 /* Strings.swift */; };
+		322FF8DE24EE3DEE00541197 /* UserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322FF8DD24EE3DEE00541197 /* UserDefaultHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		322FF8D724ED560500541197 /* GalleryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCell.swift; sourceTree = "<group>"; };
 		322FF8D824ED560500541197 /* GalleryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryCell.xib; sourceTree = "<group>"; };
 		322FF8DB24EE25B600541197 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		322FF8DD24EE3DEE00541197 /* UserDefaultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 			children = (
 				322FF8CD24ED0CC700541197 /* NetworkManager.swift */,
 				322FF8CF24ED0E3200541197 /* SearchHandler.swift */,
+				322FF8DD24EE3DEE00541197 /* UserDefaultHelper.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				322FF8CE24ED0CC700541197 /* NetworkManager.swift in Sources */,
 				322FF8C624ED07D700541197 /* GalleryVC.swift in Sources */,
 				322FF8D024ED0E3200541197 /* SearchHandler.swift in Sources */,
+				322FF8DE24EE3DEE00541197 /* UserDefaultHelper.swift in Sources */,
 				322FF89124ED04B000541197 /* AppDelegate.swift in Sources */,
 				322FF8D624ED15E800541197 /* Constants.swift in Sources */,
 			);
