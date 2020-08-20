@@ -101,7 +101,6 @@ class SearchVC: UIViewController {
         
         let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
         actionSheet.addAction(okAction)
-        
         self.present(actionSheet, animated: true, completion: nil)
     }
     
