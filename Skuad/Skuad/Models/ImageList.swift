@@ -19,9 +19,9 @@ class ImageList: NSObject {
     /// This method will initialize the image detail model
     /// - Parameter json: json object received from server
     init(json: [String: Any]) {
-        totalImages = json["totalHits"] as? Int
+        totalImages = json[kTotalHits] as? Int
         
-        if let imageArray = json["hits"] as? [[String: Any]] {
+        if let imageArray = json[kHits] as? [[String: Any]] {
             for imageJson in imageArray {
                 let image = Image(json: imageJson)
                 images.append(image)
@@ -45,10 +45,10 @@ class Image: NSObject {
     /// - Parameter json: json object received from server
     init(json: [String: Any]) {
 
-        id = json["id"] as? Int
-        downloads = json["downloads"] as? Int
-        likes = json["likes"] as? Int
-        favorites = json["favorites"] as? Int
-        userImageURL = json["userImageURL"] as? String
+        id = json[kId] as? Int
+        downloads = json[kDownloads] as? Int
+        likes = json[kLikes] as? Int
+        favorites = json[kFavorites] as? Int
+        userImageURL = json[kUserImageURL] as? String
     }
 }

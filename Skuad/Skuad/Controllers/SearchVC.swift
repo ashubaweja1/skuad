@@ -39,7 +39,7 @@ class SearchVC: UIViewController {
         navigationItem.rightBarButtonItem = searchBarButton
         
         searchBar.sizeToFit()
-        searchBar.placeholder = "search your image"
+        searchBar.placeholder = kSearchImage
         searchBar.delegate = self
         self.navigationController?.navigationBar.topItem?.titleView = searchBar
     }
