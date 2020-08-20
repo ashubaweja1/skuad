@@ -12,7 +12,6 @@
 		322FF89A24ED04B500541197 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 322FF89924ED04B500541197 /* Assets.xcassets */; };
 		322FF89D24ED04B500541197 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 322FF89B24ED04B500541197 /* LaunchScreen.storyboard */; };
 		322FF8A824ED04B500541197 /* SkuadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322FF8A724ED04B500541197 /* SkuadTests.swift */; };
-		322FF8B324ED04B500541197 /* SkuadUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322FF8B224ED04B500541197 /* SkuadUITests.swift */; };
 		322FF8C424ED074A00541197 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322FF8C324ED074A00541197 /* SearchVC.swift */; };
 		322FF8C624ED07D700541197 /* GalleryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322FF8C524ED07D700541197 /* GalleryVC.swift */; };
 		322FF8CA24ED090F00541197 /* ImageListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322FF8C824ED090F00541197 /* ImageListCell.swift */; };
@@ -37,13 +36,6 @@
 			remoteGlobalIDString = 322FF88C24ED04B000541197;
 			remoteInfo = Skuad;
 		};
-		322FF8AF24ED04B500541197 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 322FF88524ED04B000541197 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 322FF88C24ED04B000541197;
-			remoteInfo = Skuad;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -56,9 +48,6 @@
 		322FF8A324ED04B500541197 /* SkuadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkuadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		322FF8A724ED04B500541197 /* SkuadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkuadTests.swift; sourceTree = "<group>"; };
 		322FF8A924ED04B500541197 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		322FF8AE24ED04B500541197 /* SkuadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkuadUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		322FF8B224ED04B500541197 /* SkuadUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkuadUITests.swift; sourceTree = "<group>"; };
-		322FF8B424ED04B500541197 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		322FF8C324ED074A00541197 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		322FF8C524ED07D700541197 /* GalleryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryVC.swift; sourceTree = "<group>"; };
 		322FF8C824ED090F00541197 /* ImageListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListCell.swift; sourceTree = "<group>"; };
@@ -90,13 +79,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		322FF8AB24ED04B500541197 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -105,7 +87,6 @@
 			children = (
 				322FF88F24ED04B000541197 /* Skuad */,
 				322FF8A624ED04B500541197 /* SkuadTests */,
-				322FF8B124ED04B500541197 /* SkuadUITests */,
 				322FF88E24ED04B000541197 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -115,7 +96,6 @@
 			children = (
 				322FF88D24ED04B000541197 /* Skuad.app */,
 				322FF8A324ED04B500541197 /* SkuadTests.xctest */,
-				322FF8AE24ED04B500541197 /* SkuadUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,15 +126,6 @@
 				322FF8A924ED04B500541197 /* Info.plist */,
 			);
 			path = SkuadTests;
-			sourceTree = "<group>";
-		};
-		322FF8B124ED04B500541197 /* SkuadUITests */ = {
-			isa = PBXGroup;
-			children = (
-				322FF8B224ED04B500541197 /* SkuadUITests.swift */,
-				322FF8B424ED04B500541197 /* Info.plist */,
-			);
-			path = SkuadUITests;
 			sourceTree = "<group>";
 		};
 		322FF8C024ED06F200541197 /* Controllers */ = {
@@ -242,24 +213,6 @@
 			productReference = 322FF8A324ED04B500541197 /* SkuadTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		322FF8AD24ED04B500541197 /* SkuadUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 322FF8BD24ED04B500541197 /* Build configuration list for PBXNativeTarget "SkuadUITests" */;
-			buildPhases = (
-				322FF8AA24ED04B500541197 /* Sources */,
-				322FF8AB24ED04B500541197 /* Frameworks */,
-				322FF8AC24ED04B500541197 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				322FF8B024ED04B500541197 /* PBXTargetDependency */,
-			);
-			name = SkuadUITests;
-			productName = SkuadUITests;
-			productReference = 322FF8AE24ED04B500541197 /* SkuadUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -274,10 +227,6 @@
 						CreatedOnToolsVersion = 11.3.1;
 					};
 					322FF8A224ED04B500541197 = {
-						CreatedOnToolsVersion = 11.3.1;
-						TestTargetID = 322FF88C24ED04B000541197;
-					};
-					322FF8AD24ED04B500541197 = {
 						CreatedOnToolsVersion = 11.3.1;
 						TestTargetID = 322FF88C24ED04B000541197;
 					};
@@ -298,7 +247,6 @@
 			targets = (
 				322FF88C24ED04B000541197 /* Skuad */,
 				322FF8A224ED04B500541197 /* SkuadTests */,
-				322FF8AD24ED04B500541197 /* SkuadUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -321,13 +269,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				322FF8E024EE842300541197 /* ImageList.json in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		322FF8AC24ED04B500541197 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,14 +302,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		322FF8AA24ED04B500541197 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				322FF8B324ED04B500541197 /* SkuadUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -376,11 +309,6 @@
 			isa = PBXTargetDependency;
 			target = 322FF88C24ED04B000541197 /* Skuad */;
 			targetProxy = 322FF8A424ED04B500541197 /* PBXContainerItemProxy */;
-		};
-		322FF8B024ED04B500541197 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 322FF88C24ED04B000541197 /* Skuad */;
-			targetProxy = 322FF8AF24ED04B500541197 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -600,44 +528,6 @@
 			};
 			name = Release;
 		};
-		322FF8BE24ED04B500541197 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SkuadUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dominos.SkuadUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Skuad;
-			};
-			name = Debug;
-		};
-		322FF8BF24ED04B500541197 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SkuadUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dominos.SkuadUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Skuad;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -664,15 +554,6 @@
 			buildConfigurations = (
 				322FF8BB24ED04B500541197 /* Debug */,
 				322FF8BC24ED04B500541197 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		322FF8BD24ED04B500541197 /* Build configuration list for PBXNativeTarget "SkuadUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				322FF8BE24ED04B500541197 /* Debug */,
-				322FF8BF24ED04B500541197 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
