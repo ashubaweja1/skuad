@@ -24,6 +24,7 @@ let kDownloads = "downloads"
 let kLikes = "likes"
 let kFavorites = "favorites"
 let kUserImageURL = "userImageURL"
+let kLargeImageURL = "largeImageURL"
 
 
 // MARK: Display Strings

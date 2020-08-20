@@ -58,5 +58,9 @@ class Image: NSObject {
         likes = json[kLikes] as? Int
         favorites = json[kFavorites] as? Int
         userImageURL = json[kUserImageURL] as? String
+        
+        if userImageURL?.trim() == ""{
+            userImageURL = json[kLargeImageURL] as? String
+        }
     }
 }
