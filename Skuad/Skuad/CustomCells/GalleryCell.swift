@@ -11,18 +11,19 @@ import UIKit
 class GalleryCell: UICollectionViewCell {
     
     @IBOutlet weak var galleryImageView: UIImageView!
+    var galleryImage: Image?
     
     func configureGalleryCell(image: Image){
-        if let imageUrl = image.userImageURL, let url = URL(string: imageUrl) {
-            weak var weakSelf = self
-            DispatchQueue.global(qos: .userInitiated).async {
-                do {
-                    let data = try Data(contentsOf: url)
-                    DispatchQueue.main.async {
-                        weakSelf?.galleryImageView.image = UIImage(data: data)
+        self.galleryImage = image
+        
+        galleryImageView.image = UIImage(named: "placeHolder")
+        weak var weakSelf = self
+        if let imageUrl = image.userImageURL {
+            galleryImageView.downloadImage(url: imageUrl) { (url, image) in
+                DispatchQueue.main.async {
+                    if self.galleryImage?.userImageURL == url {
+                        weakSelf?.galleryImageView.image = image
                     }
-                } catch {
-                    print(error.localizedDescription)
                 }
             }
         }

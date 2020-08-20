@@ -28,3 +28,4 @@ class SearchHandler {
         return imageList
     }
 }
+
