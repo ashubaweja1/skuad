@@ -11,7 +11,7 @@ import Foundation
 class SearchHandler {
     
     class func fetchImages(searchedText: String, page: Int, completionHandler: ((ImageList?, _ error : Error?) -> Void)? = nil) {
-        let url = "\(kBaseUrl)?\(kKey)=\(kApiKey)&\(kImageType)=\(kPhoto)&\(kPage)=\(String(describing: page))"
+        let url = "\(kBaseUrl)?\(kKey)=\(kApiKey)&\(kQuery)=\(searchedText)&\(kImageType)=\(kPhoto)&\(kPage)=\(String(describing: page))"
         NetworkManager.sendRequest(requestUrl: url, type: .Get, params: nil) { (json, error) in
             
             let imageList = parseImageList(json: json)

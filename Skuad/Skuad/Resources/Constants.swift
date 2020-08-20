@@ -25,3 +25,7 @@ let kDownloads = "downloads"
 let kLikes = "likes"
 let kFavorites = "favorites"
 let kUserImageURL = "userImageURL"
+
+let kErrorTitle = "Oops!"
+let kNoImageFound = "No image found"
+let kErrorMsg = "Something went wrong"

@@ -17,7 +17,9 @@ class SearchVC: UIViewController {
     @IBOutlet weak var imagesTableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    let searchBar = UISearchBar()
     var isPagingRequestAllowed = false
+    var searchedText = ""
     
     // MARK: Variables
     var imageList:ImageList?
@@ -25,35 +27,74 @@ class SearchVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureNavBar()
+        
         let imageListCell = UINib(nibName: kImageListCell, bundle: nil)
         imagesTableView.register(imageListCell, forCellReuseIdentifier: kImageListCell)
-        
-        fetchImages(page: 1)
     }
     
-    // MARK: Private Methods
+    // This method will configure navigation bar
+    private func configureNavBar(){
+        let searchBarButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(self.search))
+        navigationItem.rightBarButtonItem = searchBarButton
+        
+        searchBar.sizeToFit()
+        searchBar.placeholder = "search your image"
+        searchBar.delegate = self
+        self.navigationController?.navigationBar.topItem?.titleView = searchBar
+    }
+    
+    // This method will be called when user click onn serach button
+    @objc func search(){
+        if let text = searchBar.text, text.count > 0 {
+            searchedText = text
+            fetchImages(page: 1)
+            imagesTableView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+            searchBar.endEditing(true)
+            activityIndicator.startAnimating()
+            imagesTableView.isUserInteractionEnabled = false
+        }
+    }
     
     private func fetchImages(page: Int){
-         weak var weakSelf = self
-        if imageList == nil {
-            activityIndicator.startAnimating()
-        }
-         
-        SearchHandler.fetchImages(searchedText: "yellow+flower", page: page) { (imagesList, error) in
+        weak var weakSelf = self
+        SearchHandler.fetchImages(searchedText: searchedText.encode(), page: page) { (imagesList, error) in
             DispatchQueue.main.async {
                 weakSelf?.activityIndicator.stopAnimating()
-                if weakSelf?.imageList == nil {
-                    weakSelf?.imageList = imagesList
+                weakSelf?.imagesTableView.isUserInteractionEnabled = true
+                
+                if error == nil {
+                    if page == 1 {
+                        weakSelf?.imageList = nil
+                        weakSelf?.imageList = imagesList
+                    }
+                    else {
+                        weakSelf?.imageList?.images.append(contentsOf: imagesList?.images ?? [])
+                    }
+
+                    weakSelf?.imagesTableView.reloadData()
+                    weakSelf?.isPagingRequestAllowed = !(weakSelf?.imageList?.images.count == imagesList?.totalImages)
+                    
+                    if weakSelf?.imageList?.totalImages == 0 {
+                        weakSelf?.showAlert(msg: kNoImageFound)
+                    }
                 }
                 else {
-                    weakSelf?.imageList?.images.append(contentsOf: imagesList?.images ?? [])
+                    weakSelf?.showAlert(msg: error?.localizedDescription ?? kErrorMsg)
                 }
-
-                weakSelf?.imagesTableView.reloadData()
-                weakSelf?.isPagingRequestAllowed = !(weakSelf?.imageList?.images.count == imagesList?.totalImages)
             }
         }
      }
+    
+    func showAlert(msg: String) {
+               let style: UIAlertController.Style =  .alert
+               let actionSheet  = UIAlertController(title: kErrorTitle, message: msg, preferredStyle: style)
+
+               let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+               actionSheet.addAction(okAction)
+            
+               self.present(actionSheet, animated: true, completion: nil)
+    }
 }
 
 
@@ -108,5 +149,13 @@ extension SearchVC: UIScrollViewDelegate {
             let nextPage = (imageList!.images.count/20) + 1
             fetchImages(page: nextPage)
         }
+    }
+}
+
+// MARK: UISearchBar Delegate Methods
+extension SearchVC: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.search()
     }
 }
