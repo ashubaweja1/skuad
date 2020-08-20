@@ -30,4 +30,4 @@ let kErrorTitle = "Oops!"
 let kNoImageFound = "No image found"
 let kErrorMsg = "Something went wrong"
 
-let kSearchImage = "search your image"
+let kSearchImage = "search images"

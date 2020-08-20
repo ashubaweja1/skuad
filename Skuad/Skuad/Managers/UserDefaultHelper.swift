@@ -43,7 +43,7 @@ class UserDefaultHelper {
         UserDefaultHelper.set(suggestions, forkey: kSuggestionList)
     }
     
-    class func getSuggestionList(suggestion: String) -> [String] {
+    class func getSuggestionList() -> [String] {
         var suggestions = [String]()
         if let suggestionList = UserDefaultHelper.get(kSuggestionList) as? [String] {
             suggestions = suggestionList
